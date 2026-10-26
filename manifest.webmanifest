@@ -1,0 +1,24 @@
+{
+  "name": "Sameera Ayeshmantha - Full Stack & Electronics Engineer",
+  "short_name": "S.Ayeshmantha",
+  "description": "Portfolio of Sameera Ayeshmantha - Full Stack Software Engineer & Electronics/Telecom Engineering undergraduate at University of Moratuwa.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://avatars.githubusercontent.com/u/115178836?v=4",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

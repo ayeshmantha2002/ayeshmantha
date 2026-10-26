@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0b0f19"/>
+  <!-- Outer border -->
+  <rect x="2" y="2" width="60" height="60" rx="13" fill="none" stroke="url(#cyberGrad)" stroke-width="1.8" opacity="0.6"/>
+  <!-- Microchip Pins -->
+  <path d="M16 10v-4M24 10v-4M32 10v-4M40 10v-4M48 10v-4" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M16 54v4M24 54v4M32 54v4M40 54v4M48 54v4" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M10 16h-4M10 24h-4M10 32h-4M10 40h-4M10 48h-4" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M54 16h4M54 24h4M54 32h4M54 40h4M54 48h4" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Central Chip Body -->
+  <rect x="14" y="14" width="36" height="36" rx="8" fill="#131b2e" stroke="url(#cyberGrad)" stroke-width="2" filter="url(#neonGlow)"/>
+  <!-- Circuit Core Nodes -->
+  <circle cx="22" cy="22" r="2.5" fill="#06b6d4"/>
+  <circle cx="42" cy="22" r="2.5" fill="#8b5cf6"/>
+  <circle cx="22" cy="42" r="2.5" fill="#8b5cf6"/>
+  <circle cx="42" cy="42" r="2.5" fill="#06b6d4"/>
+  <!-- Stylized Monogram 'A' -->
+  <path d="M32 20L23 38h4.5l2-4.5h5l2 4.5H41L32 20zm0 7l1.7 4h-3.4L32 27z" fill="url(#cyberGrad)" filter="url(#neonGlow)"/>
+</svg>
