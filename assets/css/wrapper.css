@@ -1,31 +1,25 @@
 /* ==========================================================================
-   Sameera Ayeshmantha - Next-Level Portfolio Wrapper System
-   Ultra-Modern Cyber / Glassmorphic GitHub Pages Interface
+   Sameera Ayeshmantha - Next-Level Seamless Portfolio Wrapper
+   High-Performance Cyber GitHub Pages Interface
    ========================================================================== */
 
 :root {
   --bg-dark: #0b0f19;
   --bg-deep: #070a11;
   --bg-card: rgba(26, 35, 50, 0.75);
-  --bg-glass: rgba(15, 23, 42, 0.85);
-  --bg-glass-hover: rgba(30, 41, 59, 0.9);
 
   --primary: #0ea5e9;
   --primary-glow: rgba(14, 165, 233, 0.4);
   --secondary: #8b5cf6;
   --secondary-glow: rgba(139, 92, 246, 0.4);
   --accent-cyan: #06b6d4;
-  --accent-emerald: #10b981;
   --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
 
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
 
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(14, 165, 233, 0.6);
-  --border-glow: 0 0 16px rgba(14, 165, 233, 0.35);
 
   --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --radius-sm: 8px;
@@ -38,7 +32,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Reset & Viewport Framework
+   Reset & Full-Bleed Viewport Framework
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -59,7 +53,7 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   Cyber Grid Background (Visible in simulator & preloader modes)
+   Ambient Circuit Grid & Lighting Effects
    -------------------------------------------------------------------------- */
 .ambient-grid {
   position: fixed;
@@ -99,127 +93,28 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   Viewport & Device Simulator Stage
+   Seamless Fullscreen Stage & Iframe
    -------------------------------------------------------------------------- */
 .stage-container {
-  position: relative;
+  position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   overflow: hidden;
   z-index: 2;
-  transition: var(--transition-smooth);
+  background-color: var(--bg-dark);
 }
 
-/* Device Mockup Wrapper */
-.device-frame {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              border-radius 0.4s ease,
-              box-shadow 0.4s ease,
-              border 0.4s ease;
-  overflow: hidden;
-}
-
-/* Desktop Mode (Default: Edge-to-Edge) */
-.device-frame[data-view="desktop"] {
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-}
-
-/* Tablet Simulator Mode */
-.device-frame[data-view="tablet"] {
-  width: min(840px, 92vw);
-  height: min(94vh, 900px);
-  border-radius: 28px;
-  border: 10px solid #1a2234;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(14, 165, 233, 0.25);
-  background: #000;
-}
-
-/* Mobile Simulator Mode */
-.device-frame[data-view="mobile"] {
-  width: min(390px, 92vw);
-  height: min(844px, 92vh);
-  border-radius: 46px;
-  border: 11px solid #1a2234;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(139, 92, 246, 0.3);
-  background: #000;
-}
-
-/* Device Chrome Top Notch / Dynamic Island */
-.device-notch {
-  display: none;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 115px;
-  height: 26px;
-  background: #000;
-  border-radius: 20px;
-  z-index: 10;
-  pointer-events: none;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 12px;
-}
-
-.device-notch::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #0ea5e9;
-  opacity: 0.5;
-  box-shadow: 0 0 6px #0ea5e9;
-}
-
-.device-frame[data-view="mobile"] .device-notch {
-  display: flex;
-}
-
-/* Device Home Indicator Bar */
-.device-home-bar {
-  display: none;
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 3px;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.device-frame[data-view="mobile"] .device-home-bar,
-.device-frame[data-view="tablet"] .device-home-bar {
-  display: block;
-}
-
-/* Primary Iframe */
 .portfolio-iframe {
-  flex: 1;
   width: 100%;
   height: 100%;
+  height: 100dvh;
   border: none;
   outline: none;
-  background-color: var(--bg-dark);
   display: block;
+  background-color: var(--bg-dark);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -340,348 +235,6 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   Floating HUD / Smart Island Dock
-   -------------------------------------------------------------------------- */
-.floating-hud {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: var(--transition-bounce);
-}
-
-.hud-panel {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-pill);
-  padding: 6px 10px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(14, 165, 233, 0.15);
-  transition: var(--transition-smooth);
-}
-
-/* Status Indicator Pill */
-.hud-status-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: rgba(14, 165, 233, 0.08);
-  border: 1px solid rgba(14, 165, 233, 0.25);
-  border-radius: var(--radius-pill);
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--text-muted);
-  user-select: none;
-}
-
-.pulse-dot-green {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--accent-emerald);
-  box-shadow: 0 0 8px var(--accent-emerald);
-  animation: pulseGlow 2s infinite;
-}
-
-.hud-status-text {
-  max-width: 150px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hud-status-text strong {
-  color: var(--text-main);
-  font-weight: 600;
-}
-
-/* HUD Button Group */
-.hud-btn-group {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.hud-divider {
-  width: 1px;
-  height: 22px;
-  background: var(--border-subtle);
-  margin: 0 2px;
-}
-
-.hud-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  position: relative;
-}
-
-.hud-btn:hover {
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--border-subtle);
-  transform: translateY(-2px);
-}
-
-.hud-btn.active {
-  color: #fff;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  box-shadow: 0 0 12px var(--primary-glow);
-  border-color: transparent;
-}
-
-/* HUD Toggle Mini Orb */
-.hud-collapse-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(14, 165, 233, 0.2);
-  transition: var(--transition-bounce);
-}
-
-.hud-collapse-btn:hover {
-  transform: scale(1.08) rotate(15deg);
-  border-color: var(--primary);
-  color: #fff;
-}
-
-/* Collapsed State */
-.floating-hud.minimized .hud-panel {
-  transform: scale(0.8) translateX(30px);
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-  padding: 0;
-  overflow: hidden;
-  margin: 0;
-}
-
-/* Tooltip on Hover */
-[data-tooltip] {
-  position: relative;
-}
-
-[data-tooltip]::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  background: #111827;
-  color: #f8fafc;
-  font-size: 11px;
-  font-weight: 500;
-  white-space: nowrap;
-  padding: 5px 9px;
-  border-radius: 6px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s ease;
-  z-index: 1010;
-}
-
-[data-tooltip]:hover::before {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-/* --------------------------------------------------------------------------
-   Share & QR Code Glass Modal
-   -------------------------------------------------------------------------- */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 10, 17, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: var(--transition-smooth);
-}
-
-.modal-backdrop.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.modal-card {
-  width: min(440px, 94vw);
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(14, 165, 233, 0.2);
-  transform: translateY(20px) scale(0.96);
-  transition: var(--transition-bounce);
-  position: relative;
-  text-align: center;
-}
-
-.modal-backdrop.active .modal-card {
-  transform: translateY(0) scale(1);
-}
-
-.modal-close-btn {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  transition: var(--transition-smooth);
-}
-
-.modal-close-btn:hover {
-  background: rgba(244, 63, 94, 0.2);
-  color: var(--accent-rose);
-}
-
-.modal-title {
-  font-size: 19px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--text-main);
-}
-
-.modal-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-
-.qr-box-container {
-  display: inline-block;
-  background: #fff;
-  padding: 14px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  margin-bottom: 20px;
-}
-
-.qr-code-canvas {
-  display: block;
-  width: 170px;
-  height: 170px;
-}
-
-.url-copy-row {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 6px;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.url-text-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--primary);
-  font-size: 12px;
-  font-family: monospace;
-  padding-left: 10px;
-}
-
-.btn-copy {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border: none;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: var(--transition-smooth);
-}
-
-.btn-copy:hover {
-  filter: brightness(1.15);
-  transform: translateY(-1px);
-}
-
-.modal-social-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.social-pill-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  text-decoration: none;
-  transition: var(--transition-smooth);
-}
-
-.social-pill-btn:hover {
-  background: var(--primary-glow);
-  color: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-3px);
-}
-
-/* --------------------------------------------------------------------------
    Fallback / Connection Delay Overlay
    -------------------------------------------------------------------------- */
 .fallback-overlay {
@@ -796,37 +349,6 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   Toast Notification
-   -------------------------------------------------------------------------- */
-.toast-notice {
-  position: fixed;
-  bottom: 84px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: #1e293b;
-  border: 1px solid var(--primary);
-  color: #fff;
-  font-size: 12.5px;
-  font-weight: 500;
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px var(--primary-glow);
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-bounce);
-  z-index: 11000;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.toast-notice.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-/* --------------------------------------------------------------------------
    Animations
    -------------------------------------------------------------------------- */
 @keyframes spinSlow {
@@ -853,36 +375,4 @@ html, body {
 @keyframes pulseGlow {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.15); }
-}
-
-/* --------------------------------------------------------------------------
-   Mobile & Responsive Adjustments
-   -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .floating-hud {
-    bottom: 14px;
-    right: 14px;
-  }
-  
-  .hud-status-badge {
-    display: none; /* Conserve space on mobile */
-  }
-
-  .hud-btn[data-view="tablet"] {
-    display: none; /* Hide tablet simulator on small phones */
-  }
-
-  .device-frame[data-view="tablet"],
-  .device-frame[data-view="mobile"] {
-    width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  
-  .device-notch, .device-home-bar {
-    display: none !important;
-  }
 }

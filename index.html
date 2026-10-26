@@ -91,122 +91,16 @@
     <div class="preloader-status" id="statusText">Initializing circuit canvas &amp; network handshake...</div>
   </aside>
 
-  <!-- Viewport Stage & Device Simulator -->
+  <!-- Viewport Stage (100% Edge-to-Edge Seamless Embedding) -->
   <main class="stage-container" id="stageContainer">
-    <div class="device-frame" id="deviceFrame" data-view="desktop">
-      <!-- Device Mockup Elements -->
-      <div class="device-notch"></div>
-      
-      <!-- Primary Seamless Iframe -->
-      <iframe 
-        id="portfolioFrame" 
-        class="portfolio-iframe" 
-        title="Sameera Ayeshmantha Portfolio"
-        allow="camera; microphone; geolocation; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-        loading="eager">
-      </iframe>
-
-      <div class="device-home-bar"></div>
-    </div>
+    <iframe 
+      id="portfolioFrame" 
+      class="portfolio-iframe" 
+      title="Sameera Ayeshmantha Portfolio"
+      allow="camera; microphone; geolocation; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+      loading="eager">
+    </iframe>
   </main>
-
-  <!-- Next-Level Floating HUD / Glass Island -->
-  <nav class="floating-hud" id="floatingHud" aria-label="Portfolio Tools HUD">
-    <div class="hud-panel">
-      <!-- Live Host Status -->
-      <div class="hud-status-badge">
-        <span class="pulse-dot-green"></span>
-        <span class="hud-status-text">
-          Host: <strong>dev.pasindumsoyza.lk</strong>
-        </span>
-      </div>
-
-      <div class="hud-divider"></div>
-
-      <!-- Responsive Simulator Mode Switcher -->
-      <div class="hud-btn-group">
-        <button class="hud-btn active" data-view="desktop" data-tooltip="Desktop View (100%)" aria-label="Desktop view">
-          <i class="fa-solid fa-desktop"></i>
-        </button>
-        <button class="hud-btn" data-view="tablet" data-tooltip="Tablet Simulator" aria-label="Tablet simulator">
-          <i class="fa-solid fa-tablet-screen-button"></i>
-        </button>
-        <button class="hud-btn" data-view="mobile" data-tooltip="Mobile Simulator" aria-label="Mobile simulator">
-          <i class="fa-solid fa-mobile-screen-button"></i>
-        </button>
-      </div>
-
-      <div class="hud-divider"></div>
-
-      <!-- Utilities -->
-      <div class="hud-btn-group">
-        <button class="hud-btn" id="refreshBtn" data-tooltip="Reload Portfolio" aria-label="Reload portfolio">
-          <i class="fa-solid fa-rotate-right"></i>
-        </button>
-        <button class="hud-btn" id="fullscreenBtn" data-tooltip="Toggle Fullscreen" aria-label="Toggle fullscreen">
-          <i class="fa-solid fa-expand"></i>
-        </button>
-        <button class="hud-btn" id="directBtn" data-tooltip="Open in New Tab" aria-label="Open in standalone tab">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-        <button class="hud-btn" id="shareBtn" data-tooltip="Share &amp; QR Code" aria-label="Share and QR code">
-          <i class="fa-solid fa-share-nodes"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Collapse / Expand Trigger -->
-    <button class="hud-collapse-btn" id="hudCollapseBtn" title="Toggle Controls" aria-label="Toggle controls menu">
-      <i class="fa-solid fa-sliders"></i>
-    </button>
-  </nav>
-
-  <!-- Share & QR Code Modal -->
-  <div class="modal-backdrop" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="modal-close-btn" id="closeShareModal" aria-label="Close modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <h2 class="modal-title" id="modalTitle">Share Portfolio</h2>
-      <p class="modal-desc">Scan with your smartphone camera or copy the direct link</p>
-
-      <div class="qr-box-container">
-        <canvas id="qrCanvas" class="qr-code-canvas"></canvas>
-      </div>
-
-      <div class="url-copy-row">
-        <input type="text" id="shareUrlInput" class="url-text-input" readonly>
-        <button class="btn-copy" id="copyUrlBtn">
-          <i class="fa-regular fa-copy"></i> Copy
-        </button>
-      </div>
-
-      <div style="margin-bottom: 18px;">
-        <button class="btn-primary-action" id="nativeShareBtn" style="width: 100%; display: none;">
-          <i class="fa-solid fa-paper-plane"></i> Share via App...
-        </button>
-      </div>
-
-      <div class="modal-social-links">
-        <a href="https://github.com/ayeshmantha2002" target="_blank" rel="noopener" class="social-pill-btn" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sameera-ayeshmantha-943304399/" target="_blank" rel="noopener" class="social-pill-btn" title="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/94711596479" target="_blank" rel="noopener" class="social-pill-btn" title="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="https://www.facebook.com/ayeshmantha2002/" target="_blank" rel="noopener" class="social-pill-btn" title="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="mailto:ayeshmantha2002@gmail.com" class="social-pill-btn" title="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-  </div>
 
   <!-- Connection Delay / Host Fallback Overlay -->
   <div class="fallback-overlay" id="fallbackOverlay" role="alert">
@@ -230,12 +124,6 @@
         </a>
       </div>
     </div>
-  </div>
-
-  <!-- Toast Notification Pill -->
-  <div class="toast-notice" id="toastNotice" role="status">
-    <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
-    <span id="toastMsg">Notification</span>
   </div>
 
   <!-- Controller Logic -->
